@@ -1,2 +1,2 @@
 # O-ltimo-guardi-o
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+jogo criado para trabalho do curso de desenvolvimento em python.
