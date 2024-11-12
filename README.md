@@ -61,9 +61,13 @@ def caminhos(player_escolhido,inimigo):
     if caminho == "esquerda":
         print("Você entrou entrou na toca do Urso Peba, agora terá que enfrentar ele...")
         if inimigo["vida"] < 0:
-            item_encontrado = "Barril de ouro"
+            item_encontrado = "Carta misteriosa"
             inventario.append(item_encontrado)
-            print(f"Você recebeu {itens["item2"]}")
+            print(f"Você recebeu {itens["item3"]}")
+        elif player_escolhido["vida"] < 0:
+            return "Você perdeu"
+            break
+            
     elif caminho == "direita":
         print("Você encontrou Carlos,o Ork")
         if inimigo["vida"] < 0:
@@ -71,13 +75,28 @@ def caminhos(player_escolhido,inimigo):
             inventario.append(item_encontrado)
             print(f"Você recebeu {itens["item1"]}")
             player_escolhido["ataque"] += 10
+        elif player_escolhido["vida"] < 0:
+            return "Você perdeu"
+            break    
+        else:
+            print("Você perdeu.")
     elif caminho == "seguir em frente":
-        print("siga sua jornada")
+        print("siga sua jornada e enfrente o dragão.")
+        if inimigo["nome1","vida"] < 0:
+            item_encontrado = "Barril de ouro"
+            inventario.append(item_encontrado)
+            print(f"Você recebeu {itens["item2"]}.")
+            print("Você venceu!")
+        else:
+            print("Você perdeu.")
     else:
         print("opção inválida")
+    batalha(palyer_escolhido, inimigo)
     
 def jogar():
     introdução()
     players = escolha_persongem()
     caminhos()
+    
+jogar()
     
